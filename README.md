@@ -219,7 +219,7 @@ You can check the output of the terminal window running the `start.sh` script
 or alternativley check the log file.
 
 ```sh
-tail -f bms-server.log
+tail -f logs/bms.log
 ```
 
 ### Prometheus node-exporter
@@ -242,7 +242,9 @@ chmod g+w /var/lib/prometheus/node-exporter/bms-fps.prom
 
 ## Thanks
 
-Thanks to sthalik for his patches to wine back in 2016.
+Thanks to [sthalik] for his initial patches to wine back in 2016.
+Thanks to my dear friend [lotherk] for quickly providing me wiht a test
+infrastructure with a decent bandwidth.
 
 ## License
 
@@ -256,3 +258,5 @@ Licensed under the MIT license. See LICENSE file.
 [llvmpipe]: https://www.mesa3d.org/llvmpipe.html
 [patched version of wine]: https://github.com/lukrop/wine/tree/bms-nodraw
 [SteamCmd]: https://developer.valvesoftware.com/wiki/SteamCMD#Windows
+[sthalik]: https://github.com/sthalik
+[lotherk]: https://github.com/lotherk
