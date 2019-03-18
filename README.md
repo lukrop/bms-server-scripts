@@ -2,7 +2,9 @@
 
 The purpose is to run BMS as server hosting multiplayer sessions. Since we are
 using a wine version where drawing primitives is specifically disabled this is
-not intended for client use.
+not intended for client use. Here is the obligatory screenshot:
+
+![BMS running on Debian](img/bms_on_debian.png?raw=true)
 
 ## Requirements
 
@@ -173,11 +175,41 @@ BMS_THEATER="Lorik's Korea 1.11" PROMETHEUS_METRICS=1 ./start.sh
 Don't forget to configure the graphics settings in-game after you started BMS
 for the first time. I recommend the following settings:
 
-![Graphics Settings](graphics_settings.png?raw=true "Graphics Settings")
+![Graphics Settings](img/graphics_settings.png?raw=true)
 
 Notice the grass slider still beeing at the recommended default position. I
 experienced issues with the AI not beeing able to taxi properly at Kunsan when
 the slider was all the way to the left.
+
+## Tips
+
+### Commit Server to 3D
+
+Make sure the server is the **first** in 3D. Frag the server flight to takeoff
+a minute before any human flight. This gives the server enough time to load in.
+I experienced different IVC and AI-comms issues which didn't occur when the
+server was first in.
+
+When the server is in 3D you might want to switch to the satellite view with
+the _tilde_ key (left of _1_) but minimizing the BMS window brings the biggest
+FPS gain.
+
+### COMMS button
+
+![COMMS button](img/comms_button.png?raw=true)
+
+Everytime some MP event happens (player joins, commits to 3D, etc.) the COMMS
+button starts flashing. This flashing causes the server FPS to dip under 20. By
+simply clicking on the COMMS button you'll remove the highlight and the FPS go
+up again. Since this only occurs in 2D it shouldn't affect gameplay too much.
+But until everyone has joined the server I recommend leaving the COMMS window
+open. Having higher FPS while players are downloading the weather maps and
+object information is a good thing. Also you'll see who is here and who
+commited already.
+
+If the server admin tells everybody to _"Commit taxi"_ he'll see who commited
+and can tell who isn't commited yet before commiting the server flight. No more
+_"Somebody is not commited guys..."_ anymore. ;)
 
 ## Monitoring
 
@@ -207,6 +239,10 @@ touch /var/lib/prometheus/node-exporter/bms-fps.prom
 chown root:$BMS_USER /var/lib/prometheus/node-exporter/bms-fps.prom
 chmod g+w /var/lib/prometheus/node-exporter/bms-fps.prom
 ```
+
+## Thanks
+
+Thanks to sthalik for his patches to wine back in 2016.
 
 ## License
 
