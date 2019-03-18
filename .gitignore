@@ -1,0 +1,5 @@
+sources/*
+wineprefix/*
+wine/*
+logs/*
+*.swp
