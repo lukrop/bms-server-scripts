@@ -117,6 +117,9 @@ if [ "$TWEAK_CONFIG" -eq "1" ]; then
 	sed -i -e 's/ExportRTTTextures .*/ExportRTTTextures 0/' "$BMS_CONFIG"
 	sed -i -e 's/DoubleRTTResolution .*/DoubleRTTResolution 0/' "$BMS_CONFIG"
 
+	# Make sure the server flight doesn't get bumped back into 2D
+	sed -i -e 's/PlayerBumpTime = .*/PlayerBumpTime = 43200/' "$BMS_PATH/Data/Campaign/Save/atc.ini"
+	sed -i -e 's/PlayerBumpTime = .*/PlayerBumpTime = 43200/' "$BMS_PATH/Data/Add-On Korea Strong DPRK/Campaign/atc.ini"
 fi
 
 if [ "$RESIZE_TEXTURES" -eq "1" ]; then
