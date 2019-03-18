@@ -25,8 +25,13 @@ Tested using KVM with [PVE] as hypervisor.
 
 * [Debian GNU/Linux 9.8]
 * [contrib] and [backports] sources enabled
-* dedicated user for running the scripts and BMS.
 * Steam account that owns Falcon 4.0
+* dedicated UNIX user for running the scripts and BMS.
+
+You **need** a legally obtained copy of Falcon 4.0. If you didn't buy it on
+Steam you will have to skip the automatic installation of Falcon 4.0 and
+install it manually yourself. It is **required** to start the Falcon BMS
+installer and run Falcon BMS itself.
 
 These scripts have been written and tested with Debian stretch. Though usally
 only the `bootstrap.sh` should be distribution specific.
