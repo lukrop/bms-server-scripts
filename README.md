@@ -65,7 +65,7 @@ As root `./bootstrap.sh` or as normal user with sudo privileges `sudo
 ./bootstrap.sh`.
 
 Every script has some **configuration** variables which you can adjust to your
-liking. See the [Configuration](#configuration) for details.
+liking.
 
 Override default configuration:
 
