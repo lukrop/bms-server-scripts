@@ -7,6 +7,7 @@ DATADIR=${DATADIR:-"$1"}
 
 TEXDIRS="korea/texture/texture_Polak
 korea/weather
+misctex
 objects/KoreaObj
 objects/KoreaObj_HiRes"
 
@@ -14,7 +15,7 @@ cd "$DATADIR"
 
 for d in $TEXDIRS; do
 	cd "$d"
-	for f in *.dds *.DDS *.gif *.GIF; do
+	for f in *.dds *.DDS; do
 		echo "Resizing $f"
 		mogrify -resize 1x1 "$f"
 	done
