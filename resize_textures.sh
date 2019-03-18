@@ -7,7 +7,6 @@ DATADIR=${DATADIR:-"$1"}
 
 TEXDIRS="korea/texture/texture_Polak
 korea/weather
-misctex
 objects/KoreaObj
 objects/KoreaObj_HiRes"
 
